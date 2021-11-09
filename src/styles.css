@@ -1,0 +1,70 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.topBar{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.header-img{
+    width: 100%;
+    height: 15rem;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instruct{
+    padding-top: 2.5rem;
+    border: red 1px solid;
+    width: 25rem;
+    height: 12rem;
+    text-align: left;
+    margin-left: 6.5rem;
+}
+
+.toDoListContainer{
+    border: red 1px solid;
+    width: 86%;
+    height: 12rem;
+    text-align: left;
+    margin-left: 6.5rem;
+    display: flex;
+}
+
+div{
+    border: green 1px solid;
+}
+
+.toDoBlock{
+    width: 14rem;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+
+}
+
+span{
+    margin-left: 1rem;
+}
+
+p{
+    margin-top: -0.6rem
+}
+
+hr{
+    width:89%; 
+    background-color: black;
+    
+}
