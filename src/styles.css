@@ -23,7 +23,6 @@ img{
 
 .instruct{
     padding-top: 2.5rem;
-    border: red 1px solid;
     width: 25rem;
     height: 12rem;
     text-align: left;
@@ -31,7 +30,6 @@ img{
 }
 
 .toDoListContainer{
-    border: red 1px solid;
     width: 86%;
     height: 12rem;
     text-align: left;
@@ -39,9 +37,9 @@ img{
     display: flex;
 }
 
-div{
+/* div{
     border: green 1px solid;
-}
+} */
 
 .toDoBlock{
     width: 14rem;
@@ -49,10 +47,11 @@ div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding:0
 }
 
-input{
-
+button{
+    display: none;
 }
 
 span{
@@ -66,5 +65,46 @@ p{
 hr{
     width:89%; 
     background-color: black;
-    
 }
+
+li{
+    width: 130%;
+    height: 2rem;
+    border: 1.5px #DEDEDE solid;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: -2rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li:hover{
+    background-color: rgba(82, 79, 70, 0.04) ;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.delBtn{
+ background-color: rgb(223, 145, 145);
+ width: 1.3rem;
+ height: 1.3rem;
+ display: inline-block;
+ margin-bottom: 1rem;
+}
+
+.editBtn{
+    background-color: rgb(154, 223, 145);
+    width: 1.3rem;
+    height: 1.3rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+   }

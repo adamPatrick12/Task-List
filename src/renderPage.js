@@ -1,16 +1,5 @@
-import print from "./renderObject"
+import {submitTask, input, getTask} from "./getUserInput"
 
-const input = () => {
-    const input = document.createElement("input")
-    input.setAttribute("type", "submit")
-    input.id = "input1"
-    return input
-}
-
-// const getTask = () =>{
-//     const getinput = document.getElementById("input1").value
-//     return getinput;
-// }
 
 const renderPage = function (){
 
@@ -68,19 +57,20 @@ const renderPage = function (){
     thirdGroup.classList.add("toDoBlock")
     ToDoContainer.appendChild(thirdGroup)
 
-    // thirdGroup.appendChild(print())
-
     
     firstGroup.appendChild(input())
-    // console.log(getTask())
+   
+   
+    submitTask()
     
-
     content.appendChild(topBar)
     content.appendChild(headImg)
     content.appendChild(instructions)
     content.appendChild(lineBreak)
     content.appendChild(ToDoContainer)
 }
+
+  
 
 
 
