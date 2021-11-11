@@ -1,4 +1,4 @@
-import {submitTask, input, getTask} from "./getUserInput"
+import {submitTask, input, popOutMenu, getTask} from "./getUserInput"
 
 
 const renderPage = function (){
@@ -45,7 +45,7 @@ const renderPage = function (){
     firstGroup.textContent = 'To Do'
     firstGroup.classList.add("toDoBlock")
     ToDoContainer.appendChild(firstGroup)
-
+    popOutMenu
 
     const secondGroup = document.createElement("div")
     secondGroup.textContent = 'Doing'
@@ -59,6 +59,7 @@ const renderPage = function (){
 
     
     firstGroup.appendChild(input())
+    secondGroup.appendChild(popOutMenu())
    
    
     submitTask()
