@@ -92,15 +92,17 @@ li {
 }
 
 
-li:hover {
+li:hover{
     background-color: rgba(82, 79, 70, 0.03) ;
 }
 
 li:hover .menuBtn{
-    display: block;
-    
+    display: block; 
 }
 
+li:hover .popWindow{
+    display: block;
+}
 
 ul{
     list-style-type: none;
@@ -108,23 +110,7 @@ ul{
     margin: 0;
 }
 
-.delBtn{
- background-color: rgb(223, 145, 145);
- width: 1.3rem;
- height: 1.3rem;
- display: inline-block;
- margin-bottom: 1rem;
- display: none;
-}
 
-.editBtn{
-    background-color: rgb(154, 223, 145);
-    width: 1.3rem;
-    height: 1.3rem;
-    display: inline-block;
-    margin-bottom: 1rem;
-    display: none;
-   }
 
    .menuBtn{
     background-color: rgb(255, 255, 255);
@@ -159,8 +145,14 @@ ul{
     display: flex;   
     border: #DADADA 1px solid;
     flex-direction: column;
-    width: 10rem;
+    width: 13rem;
     box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    top: -34px;
+    left: 13px;
+    display: block;
    }
 
    h3{
@@ -177,4 +169,6 @@ ul{
     background-color: rgba(55,53,47,0.08);
    }
    
-   
+   input{
+       margin-bottom: 0.4rem
+   }
