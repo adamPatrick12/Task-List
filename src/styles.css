@@ -44,9 +44,9 @@ img{
     display: flex;
 }
 
-/* div{
+div{
     border: green 1px solid;
-} */
+}
 
 .toDoBlock{
     width: 14rem;
@@ -55,6 +55,18 @@ img{
     flex-direction: column;
     align-items: center;
     padding:0
+}
+
+.groupBtn{
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #9C9C98;
+}
+
+.groupBtn:hover{
+    background-color: rgba(55,53,47,0.08);
 }
 
 button{

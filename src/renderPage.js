@@ -1,4 +1,4 @@
-import {submitTask, input, popOutMenu, getTask} from "./getUserInput"
+import {submitTask, input, newGroupBtn, ToDoContainer, getTask} from "./getUserInput"
 
 
 const renderPage = function (){
@@ -38,36 +38,15 @@ const renderPage = function (){
 
     const lineBreak = document.createElement("hr")
 
-    const ToDoContainer = document.createElement("div")
-    ToDoContainer.classList.add("toDoListContainer")
-    
-    const firstGroup = document.createElement("div")
-    firstGroup.textContent = 'To Do'
-    firstGroup.classList.add("toDoBlock")
-    ToDoContainer.appendChild(firstGroup)
-   
-
-    const secondGroup = document.createElement("div")
-    secondGroup.textContent = 'Doing'
-    secondGroup.classList.add("toDoBlock")
-    ToDoContainer.appendChild(secondGroup)
-
-    const thirdGroup = document.createElement("div")
-    thirdGroup.textContent = 'Done'
-    thirdGroup.classList.add("toDoBlock")
-    ToDoContainer.appendChild(thirdGroup)
-
-    
-    firstGroup.appendChild(input())
-
-   
-    submitTask()
+        
     
     content.appendChild(topBar)
     content.appendChild(headImg)
     content.appendChild(instructions)
     content.appendChild(lineBreak)
-    content.appendChild(ToDoContainer)
+    content.appendChild(ToDoContainer())
+    
+  
 }
 
   

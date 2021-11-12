@@ -1,5 +1,6 @@
 import storeTask from "./storeTasks"
 
+
 const input1 = document.createElement("input")
 input1.setAttribute("type", 'text')
 input1.id = "task"
@@ -7,7 +8,6 @@ input1.setAttribute("placeholder", 'Enter Task')
 const inputBtn = document.createElement("button")
 inputBtn.setAttribute("type", "sumbit")
 const list = document.createElement("ul")
-
 
 let getinput = "";
 
@@ -26,6 +26,50 @@ const getTask = () => {
 }
 
 
+
+const newGroupBtn = () => {
+    
+    const newGroup = document.createElement("div")
+    newGroup.classList.add('groupBtn')
+    newGroup.textContent = "+"
+
+    newGroup.addEventListener('click', (e) =>{
+        const div = document.getElementsByClassName("toDoListContainer")
+        div.appendChild(list)
+        submitTask()
+    })
+    
+    return newGroup 
+}
+
+
+
+//Create group
+
+const toDoBlock = () => {
+    
+    const block = document.createElement("div")
+    block.textContent = 'To Do'
+    block.classList.add("toDoBlock")
+    block.appendChild(input())
+    return block
+}
+
+const ToDoContainer = () => {
+    
+   
+    const ToDoContainer = document.createElement("div")
+    ToDoContainer.classList.add("toDoListContainer")
+    ToDoContainer.appendChild(newGroupBtn())
+    
+    
+    return ToDoContainer;
+}
+
+
+
+//Create group
+
 const menuButton = (() => {
    
    const create = () =>{
@@ -37,7 +81,6 @@ const menuButton = (() => {
     menuBtn.setAttribute("type", "button")
     return menuBtn
    }
-
     return {create}
 })()
 
@@ -140,7 +183,6 @@ const displayTask = () => {
     const span = document.createElement("span")
     span.textContent = getinput;
     taskDisplay.appendChild(span)
-   
     taskDisplay.appendChild(menuButton.create())
     
     list.appendChild(taskDisplay)
@@ -178,4 +220,4 @@ list.addEventListener("click", (e) =>{
 
 
 
-export  {input, getTask, popOutMenu, submitTask, getinput}
+export  {input, getTask, popOutMenu, submitTask, newGroupBtn, ToDoContainer, getinput}
