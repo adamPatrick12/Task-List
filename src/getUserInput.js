@@ -1,16 +1,69 @@
 import storeTask from "./storeTasks"
+import {ToDoContainer} from "./getUserInput2"
+
 let getinput = "";
 let num = 0
+let groupNameVar2 = ""
 
-function Task (task, group){
+function Task (task){
     this.task = task
-    this.group = group 
 }
 
 let newTask = new Task()
 
 
 let list = document.createElement("ul")
+
+
+// Group
+
+const groupName = ()=>{
+    const groupInput = document.createElement("input")
+    groupInput.setAttribute('type', 'text')
+    groupInput.id = 'group2'
+    groupInput.setAttribute("placeholder", 'Enter Group Name')
+    
+    groupInput.addEventListener("submit", (e) => {
+        e.preventDefault();
+    })
+
+    return groupInput
+}
+
+const getGroup = () => {
+    groupNameVar2 = document.getElementById('group2').value
+    return groupName
+}
+
+const groupInput2 = () => {
+    const form1 = document.createElement("form")
+    
+    form1.classList.add("formGroup")
+
+    form1.appendChild(groupName())
+    form1.appendChild(submitGroup())
+    
+    return form1
+}
+
+const submitGroup = () => {
+    
+    const inputBtn = document.createElement("button")
+    inputBtn.setAttribute("type", "sumbit")
+    inputBtn.classList.add("submitGroupBtn")
+
+    inputBtn.addEventListener("click", (e) =>{
+    e.preventDefault()
+        getGroup()
+        const bubble1 = inputBtn.parentNode
+        bubble1.style.display = "none"    //Removing text box
+        ToDoContainer.insertBefore(toDoBlock(), ToDoContainer.lastElementChild)
+    })
+
+    return inputBtn
+}
+
+//Group
 
 const newInput = () =>{
     num++
@@ -52,6 +105,7 @@ const submitTask = () => {
     
     const inputBtn = document.createElement("button")
     inputBtn.setAttribute("type", "sumbit")
+    inputBtn.classList.add("inputBtn")
     
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
@@ -98,7 +152,7 @@ const input = () => {
 const toDoBlock = () => {
     
     const block = document.createElement("div")
-    block.textContent = 'To Do'
+    block.textContent = groupNameVar2
     block.classList.add("toDoBlock")
     block.appendChild(input())
     return block
@@ -217,4 +271,4 @@ const popOutMenu = () => {
 
 
 
-export  {input, getTask, popOutMenu, toDoBlock, submitTask, getinput}
+export  {input, getTask, popOutMenu, toDoBlock, submitTask, getinput, groupInput2}

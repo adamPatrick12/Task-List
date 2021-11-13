@@ -1,5 +1,7 @@
-import {submitTask, input, toDoBlock} from "./getUserInput"
-import {toDoBlock2} from "./getUserInput2"
+import {submitTask, input, toDoBlock, groupInput2} from "./getUserInput"
+import {toDoBlock2, groupInput, ToDoContainer} from "./getUserInput2"
+
+let groupCount = 1;
 
 const renderPage = function (){
 
@@ -46,12 +48,22 @@ const renderPage = function (){
         newGroup.classList.add('groupBtn')
         newGroup.textContent = "+"
     
-       newGroup.addEventListener("click", () =>{
+       newGroup.addEventListener("click", (e) =>{
         
-        if(ToDoContainer.childElementCount > 1){
-            ToDoContainer.insertBefore(toDoBlock2(), ToDoContainer.lastElementChild)
+        if(e.target.textContent === '+' && groupCount == 1){   
+            groupCount++
+            info2.appendChild(groupInput())
+        }else if(e.target.textContent === '+' && groupCount == 2){
+            console.log("Tets")
+            info2.appendChild(groupInput2())
+        }
+        
+
+
+        if(ToDoContainer.childElesmentCount > 1){
+           
         }else{
-            ToDoContainer.insertBefore(toDoBlock(), ToDoContainer.firstElementChild)
+            
         }
         
        
@@ -60,9 +72,7 @@ const renderPage = function (){
         return newGroup 
     }
     
-    const ToDoContainer = document.createElement("div")
-    ToDoContainer.classList.add("toDoListContainer")
-    ToDoContainer.appendChild(newGroupBtn())    
+    ToDoContainer.appendChild(newGroupBtn())  
     
     content.appendChild(topBar)
     content.appendChild(headImg)

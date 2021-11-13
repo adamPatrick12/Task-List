@@ -69,8 +69,22 @@ img{
     background-color: rgba(55,53,47,0.08);
 }
 
-button{
+.inputBtn{
     display: none;
+}
+
+.submitGroupBtn{
+    position:fixed;
+    left: 55%;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+#group, #group2{
+    position:fixed;
+    left: 40%;
+    top: 50%
 }
 
 span{

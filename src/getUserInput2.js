@@ -1,6 +1,7 @@
 import storeTask from "./storeTasks"
 let getinput = "";
 let num = 0
+let groupNameVar = ""
 
 function Task (task, group){
     this.task = task
@@ -8,9 +9,61 @@ function Task (task, group){
 }
 
 let newTask = new Task()
-
-
 let list = document.createElement("ul")
+
+const ToDoContainer = document.createElement("div")
+    ToDoContainer.classList.add("toDoListContainer")
+    
+
+// Group
+
+const groupName = ()=>{
+    const groupInput = document.createElement("input")
+    groupInput.setAttribute('type', 'text')
+    groupInput.id = 'group'
+    groupInput.setAttribute("placeholder", 'Enter Group Name')
+    
+    groupInput.addEventListener("submit", (e) => {
+        e.preventDefault();
+    })
+
+    return groupInput
+}
+
+const getGroup = () => {
+    groupNameVar = document.getElementById('group').value
+    return groupName
+}
+
+const groupInput = () => {
+    const form1 = document.createElement("form")
+    
+    form1.classList.add("formGroup")
+
+    form1.appendChild(groupName())
+    form1.appendChild(submitGroup())
+    
+    return form1
+}
+
+const submitGroup = () => {
+    
+    const inputBtn = document.createElement("button")
+    inputBtn.setAttribute("type", "sumbit")
+    inputBtn.classList.add("submitGroupBtn")
+
+    inputBtn.addEventListener("click", (e) =>{
+    e.preventDefault()
+        getGroup()
+        const bubble1 = inputBtn.parentNode
+        bubble1.style.display = "none"
+        ToDoContainer.insertBefore(toDoBlock2(), ToDoContainer.lastElementChild)
+    })
+
+    return inputBtn
+}
+
+//Group
 
 const newInput = () =>{
     num++
@@ -34,7 +87,6 @@ const makeInput = () => {
 
 const getTask = () => {
     newTask.task = document.getElementById('task').value
-    console.log(newTask.task)
     document.querySelector('.formClass').reset()
    return newTask.task
 }
@@ -54,6 +106,7 @@ const submitTask = () => {
     
     const inputBtn = document.createElement("button")
     inputBtn.setAttribute("type", "sumbit")
+    inputBtn.classList.add("inputBtn")
     
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
@@ -101,7 +154,7 @@ const input = () => {
 const toDoBlock2 = () => {
     
     const block = document.createElement("div")
-    block.textContent = 'Doing'
+    block.textContent = groupNameVar
     block.classList.add("toDoBlock")
     block.appendChild(input())
     return block
@@ -220,4 +273,4 @@ const popOutMenu = () => {
 
 
 
-export  {input, getTask, popOutMenu, toDoBlock2, submitTask, getinput}
+export  {input, getTask, popOutMenu, toDoBlock2, submitTask, getinput, groupInput, ToDoContainer, submitGroup}
