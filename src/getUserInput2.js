@@ -15,13 +15,14 @@ let list = document.createElement("ul")
 const newInput = () =>{
     num++
     const input = document.createElement("input")
+    console.log(num)
     return input
 }
 
 const makeInput = () => {
     const input1 = newInput()
     input1.setAttribute("type", 'text')
-    input1.id = `task${num}`
+    input1.id = `task`
     input1.setAttribute("placeholder", 'Enter Task')
    
     input1.addEventListener("submit", (e) => {
@@ -32,8 +33,9 @@ const makeInput = () => {
 }
 
 const getTask = () => {
-    newTask.task = document.getElementById(`task${num}`).value
-    document.querySelector('form').reset()
+    newTask.task = document.getElementById('task').value
+    console.log(newTask.task)
+    document.querySelector('.formClass').reset()
    return newTask.task
 }
 
@@ -83,7 +85,8 @@ function createList () {
 
 const input = () => {
     const form1 = document.createElement("form")
-   
+    form1.classList.add("formClass")
+
     form1.appendChild(makeInput())
     form1.appendChild(submitTask())
     form1.appendChild(createList())
@@ -95,10 +98,10 @@ const input = () => {
 
 //Create group
 
-const toDoBlock = () => {
+const toDoBlock2 = () => {
     
     const block = document.createElement("div")
-    block.textContent = 'To Do'
+    block.textContent = 'Doing'
     block.classList.add("toDoBlock")
     block.appendChild(input())
     return block
@@ -217,4 +220,4 @@ const popOutMenu = () => {
 
 
 
-export  {input, getTask, popOutMenu, toDoBlock, submitTask, getinput}
+export  {input, getTask, popOutMenu, toDoBlock2, submitTask, getinput}

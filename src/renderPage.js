@@ -1,5 +1,5 @@
-import {submitTask, input, newGroupBtn, ToDoContainer, getTask} from "./getUserInput"
-
+import {submitTask, input, toDoBlock} from "./getUserInput"
+import {toDoBlock2} from "./getUserInput2"
 
 const renderPage = function (){
 
@@ -38,13 +38,37 @@ const renderPage = function (){
 
     const lineBreak = document.createElement("hr")
 
+    
+    
+    const newGroupBtn = () => {
+    
+        const newGroup = document.createElement("div")
+        newGroup.classList.add('groupBtn')
+        newGroup.textContent = "+"
+    
+       newGroup.addEventListener("click", () =>{
         
+        if(ToDoContainer.childElementCount > 1){
+            ToDoContainer.insertBefore(toDoBlock2(), ToDoContainer.lastElementChild)
+        }else{
+            ToDoContainer.insertBefore(toDoBlock(), ToDoContainer.firstElementChild)
+        }
+        
+       
+        })
+        
+        return newGroup 
+    }
+    
+    const ToDoContainer = document.createElement("div")
+    ToDoContainer.classList.add("toDoListContainer")
+    ToDoContainer.appendChild(newGroupBtn())    
     
     content.appendChild(topBar)
     content.appendChild(headImg)
     content.appendChild(instructions)
     content.appendChild(lineBreak)
-    content.appendChild(ToDoContainer())
+    content.appendChild(ToDoContainer)
     
   
 }

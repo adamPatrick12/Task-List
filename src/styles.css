@@ -44,9 +44,9 @@ img{
     display: flex;
 }
 
-div{
+/* div{
     border: green 1px solid;
-}
+} */
 
 .toDoBlock{
     width: 14rem;
