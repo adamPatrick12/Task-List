@@ -1,27 +1,24 @@
-import storeTask from "./storeTasks"
-let getinput = "";
-let num = 0
-let groupNameVar = ""
 
-function Task (task, group){
+import {ToDoContainer} from "./group1"
+
+let groupNameVar3 = ""
+
+function Task (task){
     this.task = task
-    this.group = group 
 }
 
 let newTask = new Task()
 let list = document.createElement("ul")
 
-const ToDoContainer = document.createElement("div")
-    ToDoContainer.classList.add("toDoListContainer")
-    
 
 // Group
 
 const groupName = ()=>{
     const groupInput = document.createElement("input")
     groupInput.setAttribute('type', 'text')
-    groupInput.id = 'group'
+    groupInput.id = 'group3'
     groupInput.setAttribute("placeholder", 'New group')
+    
     
     groupInput.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -31,11 +28,11 @@ const groupName = ()=>{
 }
 
 const getGroup = () => {
-    groupNameVar = document.getElementById('group').value
-    return groupName
+    groupNameVar3 = document.getElementById('group3').value
+    return groupNameVar3
 }
 
-const groupInput = () => {
+const groupInput3 = () => {
     const form1 = document.createElement("form")
     
     form1.classList.add("formGroup")
@@ -52,20 +49,18 @@ const submitGroup = () => {
     inputBtn.setAttribute("type", "sumbit")
     inputBtn.classList.add("submitGroupBtn")
     inputBtn.textContent = "Done"
-    
 
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
-    if(document.getElementById("group").value.length == 0)
-    {
-    alert("Do Not leave group name empty")
+    if(document.getElementById("group3").value.length == 0){
+        alert("Do Not leave group name empty")
     }else{
         getGroup()
         const bubble1 = inputBtn.parentNode
-        bubble1.style.display = "none"
-        ToDoContainer.insertBefore(toDoBlock2(), ToDoContainer.lastElementChild)
+        bubble1.style.display = "none"    //Removing text box
+        ToDoContainer.insertBefore(toDoBlock3(), ToDoContainer.lastElementChild)
     }
-        
+    
     })
 
     return inputBtn
@@ -74,16 +69,14 @@ const submitGroup = () => {
 //Group
 
 const newInput = () =>{
-    num++
     const input = document.createElement("input")
-    console.log(num)
     return input
 }
 
 const makeInput = () => {
     const input1 = newInput()
     input1.setAttribute("type", 'text')
-    input1.id = `task`
+    input1.id = 'task2'
     input1.classList.add("taskBox")
     input1.setAttribute("placeholder", '+ New')
    
@@ -95,8 +88,8 @@ const makeInput = () => {
 }
 
 const getTask = () => {
-    newTask.task = document.getElementById('task').value
-    document.querySelector('.remove').reset()
+    newTask.task = document.getElementById("task2").value
+    document.querySelector('.remove2').reset()
    return newTask.task
 }
 
@@ -107,9 +100,10 @@ function displayTask()  {
     span.textContent = newTask.task;
     taskDisplay.appendChild(span)
     taskDisplay.appendChild(menuButton.create())
-    console.log(span)
     return taskDisplay
 }
+
+
 
 const submitTask = () => {
     
@@ -119,8 +113,13 @@ const submitTask = () => {
     
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
+    if(document.getElementById("task2").value.length == 0){
+        alert("Do not leave task empty")
+    }else{
         getTask()
-       createList().appendChild(displayTask())
+        createList().appendChild(displayTask())
+    } 
+    
     })
 
     return inputBtn
@@ -146,26 +145,25 @@ function createList () {
 }
 
 const input = () => {
-    const form2 = document.createElement("form")
-    form2.classList.add("remove")
-
-    form2.appendChild(makeInput())
-    form2.appendChild(submitTask())
-    form2.appendChild(createList())
+    const form3 = document.createElement("form")
+    form3.classList.add("remove2")
+   
+    form3.appendChild(makeInput())
+    form3.appendChild(submitTask())
+    form3.appendChild(createList())
     
- 
-    return form2
+    return form3
 }
 
 
 //Create group
 
-const toDoBlock2 = () => {
+const toDoBlock3 = () => {
     
     const block = document.createElement("div")
     const h5 = document.createElement("h5")
-    h5.classList.add('group1Color')
-    h5.textContent = groupNameVar
+    h5.classList.add('group3Color')
+    h5.textContent = groupNameVar3
     block.appendChild(h5)
     block.classList.add("toDoBlock")
     block.appendChild(input())
@@ -200,12 +198,9 @@ const deleteTab = () => {
     imgTrash.classList.add("Iconimg")
     imgTrash.src = "../src/images/garbage.png"
     deleteTab.appendChild(MenuTitle1)
-    MenuTitle1.prepend(imgTrash)
-    
+    MenuTitle1.prepend(imgTrash) 
     
     return deleteTab
-
-    
 }
 
 const renameTab = () => {
@@ -234,8 +229,6 @@ const saveTab = () => {
     return saveTab
 }
 
-
-
 const popOutMenu = () => {
     const popOut = document.createElement("div")
     popOut.classList.add("popWindow")
@@ -261,7 +254,6 @@ const popOutMenu = () => {
                 }               
             });            
             const span = bubble4.firstElementChild;
-            console.log(span)
             const input = document.createElement('input');
             input.type = 'text';
             bubble4.insertBefore(input, span);
@@ -285,4 +277,4 @@ const popOutMenu = () => {
 
 
 
-export  {input, getTask, popOutMenu, toDoBlock2, submitTask, getinput, groupInput, ToDoContainer, submitGroup}
+export  {groupInput3}

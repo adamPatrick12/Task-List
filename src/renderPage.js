@@ -1,5 +1,8 @@
-import {submitTask, input, toDoBlock, groupInput2} from "./getUserInput"
-import {toDoBlock2, groupInput, ToDoContainer} from "./getUserInput2"
+import {groupInput2} from "./group2"
+import {groupInput, ToDoContainer} from "./group1"
+import {groupInput3} from "./group3"
+import {groupInput4} from "./group4"
+import {groupInput5} from "./group5"
 
 let groupCount = 0;
 
@@ -54,7 +57,17 @@ const renderPage = function (){
             groupCount++
             ToDoContainer.appendChild(groupInput())
         }else if(e.target.textContent === '+' && groupCount == 1){
+            groupCount++
             ToDoContainer.appendChild(groupInput2())
+        }else if(e.target.textContent === '+' && groupCount == 2){
+            groupCount++
+            ToDoContainer.appendChild(groupInput3())
+        }else if(e.target.textContent === '+' && groupCount == 3){
+            groupCount++
+            ToDoContainer.appendChild(groupInput4())
+        }else if(e.target.textContent === '+' && groupCount == 4){
+            groupCount++
+            ToDoContainer.appendChild(groupInput5())
         }
 
        
