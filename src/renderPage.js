@@ -52,10 +52,8 @@ const renderPage = function (){
         
         if(e.target.textContent === '+' && groupCount == 0){   
             groupCount++
-            console.log(`This is group count ${groupCount}`)
             ToDoContainer.appendChild(groupInput())
         }else if(e.target.textContent === '+' && groupCount == 1){
-            console.log("Tets")
             ToDoContainer.appendChild(groupInput2())
         }
 

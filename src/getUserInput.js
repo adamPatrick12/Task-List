@@ -21,7 +21,8 @@ const groupName = ()=>{
     const groupInput = document.createElement("input")
     groupInput.setAttribute('type', 'text')
     groupInput.id = 'group2'
-    groupInput.setAttribute("placeholder", 'Enter Group Name')
+    groupInput.setAttribute("placeholder", 'New group')
+    
     
     groupInput.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -76,6 +77,7 @@ const makeInput = () => {
     const input1 = newInput()
     input1.setAttribute("type", 'text')
     input1.id = 'task1'
+    input1.classList.add("taskBox")
     input1.setAttribute("placeholder", 'Enter Task')
    
     input1.addEventListener("submit", (e) => {
