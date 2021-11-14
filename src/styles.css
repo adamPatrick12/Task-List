@@ -74,17 +74,40 @@ img{
 }
 
 .submitGroupBtn{
-    position:fixed;
-    left: 55%;
-    top: 50%;
-    width: 2rem;
-    height: 2rem;
+    position:relative;
+    left: -13%;
+    top: 0.5px;
+    width: 4rem;
+    height: 1.35rem;
+    background-color: rgb(46, 170, 220);
+    border-radius: 3px;
+    box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px inset, rgb(15 15 15 / 10%) 0px 1px 2px;
+    border: none;
+    color: white;
+    align-items: center;
+}
+
+.submitGroupBtn:hover{
+    background-color: rgb(6, 156, 205);
 }
 
 #group, #group2{
-    position:fixed;
-    left: 40%;
-    top: 50%
+    position:relative;
+    left: 10%;
+    top: 0%;
+    width: 15rem;
+    height: 2rem;
+    color: black;
+    border: 1.5px #DEDEDE solid;
+    background-color: #F7F7F5;
+    box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
+    outline: none;
+    font-family: sans-serif;
+    border-radius: 3px;
+}
+
+#group::placeholder, #group2::placeholder{
+    color: #B0B0AD;
 }
 
 span{

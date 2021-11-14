@@ -1,7 +1,7 @@
 import {submitTask, input, toDoBlock, groupInput2} from "./getUserInput"
 import {toDoBlock2, groupInput, ToDoContainer} from "./getUserInput2"
 
-let groupCount = 1;
+let groupCount = 0;
 
 const renderPage = function (){
 
@@ -50,22 +50,15 @@ const renderPage = function (){
     
        newGroup.addEventListener("click", (e) =>{
         
-        if(e.target.textContent === '+' && groupCount == 1){   
+        if(e.target.textContent === '+' && groupCount == 0){   
             groupCount++
-            info2.appendChild(groupInput())
-        }else if(e.target.textContent === '+' && groupCount == 2){
+            console.log(`This is group count ${groupCount}`)
+            ToDoContainer.appendChild(groupInput())
+        }else if(e.target.textContent === '+' && groupCount == 1){
             console.log("Tets")
-            info2.appendChild(groupInput2())
+            ToDoContainer.appendChild(groupInput2())
         }
-        
 
-
-        if(ToDoContainer.childElesmentCount > 1){
-           
-        }else{
-            
-        }
-        
        
         })
         

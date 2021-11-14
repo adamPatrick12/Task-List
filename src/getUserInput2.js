@@ -51,6 +51,7 @@ const submitGroup = () => {
     const inputBtn = document.createElement("button")
     inputBtn.setAttribute("type", "sumbit")
     inputBtn.classList.add("submitGroupBtn")
+    inputBtn.textContent = "Done"
 
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
@@ -87,7 +88,7 @@ const makeInput = () => {
 
 const getTask = () => {
     newTask.task = document.getElementById('task').value
-    document.querySelector('.formClass').reset()
+    document.querySelector('.remove').reset()
    return newTask.task
 }
 
@@ -137,15 +138,15 @@ function createList () {
 }
 
 const input = () => {
-    const form1 = document.createElement("form")
-    form1.classList.add("formClass")
+    const form2 = document.createElement("form")
+    form2.classList.add("remove")
 
-    form1.appendChild(makeInput())
-    form1.appendChild(submitTask())
-    form1.appendChild(createList())
+    form2.appendChild(makeInput())
+    form2.appendChild(submitTask())
+    form2.appendChild(createList())
     
  
-    return form1
+    return form2
 }
 
 
