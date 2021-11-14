@@ -56,10 +56,16 @@ const submitGroup = () => {
 
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
+    if(document.getElementById("group").value.length == 0)
+    {
+    alert("Do Not leave group name empty")
+    }else{
         getGroup()
         const bubble1 = inputBtn.parentNode
         bubble1.style.display = "none"
         ToDoContainer.insertBefore(toDoBlock2(), ToDoContainer.lastElementChild)
+    }
+        
     })
 
     return inputBtn
@@ -79,7 +85,7 @@ const makeInput = () => {
     input1.setAttribute("type", 'text')
     input1.id = `task`
     input1.classList.add("taskBox")
-    input1.setAttribute("placeholder", '+ Task')
+    input1.setAttribute("placeholder", '+ New')
    
     input1.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -157,7 +163,10 @@ const input = () => {
 const toDoBlock2 = () => {
     
     const block = document.createElement("div")
-    block.textContent = groupNameVar
+    const h5 = document.createElement("h5")
+    h5.classList.add('group1Color')
+    h5.textContent = groupNameVar
+    block.appendChild(h5)
     block.classList.add("toDoBlock")
     block.appendChild(input())
     return block
@@ -212,17 +221,17 @@ const renameTab = () => {
     return renameTab
 }
 
-const moveToTab = () => {
-    const moveTo = document.createElement("div")
-    moveTo.classList.add("tab")
+const saveTab = () => {
+    const saveTab = document.createElement("div")
+    saveTab.classList.add("tab")
     const MenuTitle3 = document.createElement("h3")
-    MenuTitle3.textContent = "Move to"
-    const imgMove = document.createElement("img")
-    imgMove.classList.add("Iconimg")
-    imgMove.src = "../src/images/right.png"
-    moveTo.appendChild(MenuTitle3)
-    MenuTitle3.prepend(imgMove)
-    return moveTo
+    MenuTitle3.textContent = "Save"
+    const imgSave = document.createElement("img")
+    imgSave.classList.add("Iconimg")
+    imgSave.src = "../src/images/save.png"
+    saveTab.appendChild(MenuTitle3)
+    MenuTitle3.prepend(imgSave)
+    return saveTab
 }
 
 
@@ -234,7 +243,6 @@ const popOutMenu = () => {
     
     popOut.appendChild(deleteTab())
     popOut.appendChild(renameTab())
-    popOut.appendChild(moveToTab())
     
     popOut.addEventListener("click", (e) => {
         const button = e.target;
@@ -258,7 +266,8 @@ const popOutMenu = () => {
             input.type = 'text';
             bubble4.insertBefore(input, span);
             bubble4.removeChild(span); 
-            button.textContent = 'Save'
+            popOut.removeChild(popOut.childNodes[1])
+            popOut.appendChild(saveTab())
         }else if(button.textContent === 'Save'){
             const input = bubble4.firstElementChild;
             const span = document.createElement('span');

@@ -33,7 +33,7 @@ const groupName = ()=>{
 
 const getGroup = () => {
     groupNameVar2 = document.getElementById('group2').value
-    return groupName
+    return groupNameVar2
 }
 
 const groupInput2 = () => {
@@ -56,10 +56,15 @@ const submitGroup = () => {
 
     inputBtn.addEventListener("click", (e) =>{
     e.preventDefault()
+    if(document.getElementById("group2").value.length == 0){
+        alert("Do Not leave group name empty")
+    }else{
         getGroup()
         const bubble1 = inputBtn.parentNode
         bubble1.style.display = "none"    //Removing text box
         ToDoContainer.insertBefore(toDoBlock(), ToDoContainer.lastElementChild)
+    }
+    
     })
 
     return inputBtn
@@ -156,7 +161,10 @@ const input = () => {
 const toDoBlock = () => {
     
     const block = document.createElement("div")
-    block.textContent = groupNameVar2
+    const h5 = document.createElement("h5")
+    h5.classList.add('group2Color')
+    h5.textContent = groupNameVar2
+    block.appendChild(h5)
     block.classList.add("toDoBlock")
     block.appendChild(input())
     return block
@@ -211,18 +219,19 @@ const renameTab = () => {
     return renameTab
 }
 
-const moveToTab = () => {
-    const moveTo = document.createElement("div")
-    moveTo.classList.add("tab")
+const saveTab = () => {
+    const saveTab = document.createElement("div")
+    saveTab.classList.add("tab")
     const MenuTitle3 = document.createElement("h3")
-    MenuTitle3.textContent = "Move to"
-    const imgMove = document.createElement("img")
-    imgMove.classList.add("Iconimg")
-    imgMove.src = "../src/images/right.png"
-    moveTo.appendChild(MenuTitle3)
-    MenuTitle3.prepend(imgMove)
-    return moveTo
+    MenuTitle3.textContent = "Save"
+    const imgSave = document.createElement("img")
+    imgSave.classList.add("Iconimg")
+    imgSave.src = "../src/images/save.png"
+    saveTab.appendChild(MenuTitle3)
+    MenuTitle3.prepend(imgSave)
+    return saveTab
 }
+
 
 
 
@@ -233,7 +242,6 @@ const popOutMenu = () => {
     
     popOut.appendChild(deleteTab())
     popOut.appendChild(renameTab())
-    popOut.appendChild(moveToTab())
     
     popOut.addEventListener("click", (e) => {
         const button = e.target;
@@ -257,7 +265,8 @@ const popOutMenu = () => {
             input.type = 'text';
             bubble4.insertBefore(input, span);
             bubble4.removeChild(span); 
-            button.textContent = 'Save'
+            popOut.removeChild(popOut.childNodes[1])
+            popOut.appendChild(saveTab())
         }else if(button.textContent === 'Save'){
             const input = bubble4.firstElementChild;
             const span = document.createElement('span');

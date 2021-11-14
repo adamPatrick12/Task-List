@@ -53,12 +53,31 @@ img{
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding:0;
     margin-left: 1.8rem;
+    margin-top: 0.8;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
 }
+
+h5{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    color: rgb(64, 44, 27);
+    margin-top: 0.3rem;
+}
+
+.group1Color{
+    background: rgb(200, 225, 253);
+}
+
+.group2Color{
+    background: rgb(219, 237, 219);
+}
+
 
 .groupBtn{
     width: 2rem;
@@ -79,7 +98,7 @@ img{
 .taskBox{
     width: 10rem;
     height: 2rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     outline: none;
     border: none;
     color:black;
@@ -99,7 +118,7 @@ img{
 .submitGroupBtn{
     position:relative;
     left: -13%;
-    top: 10px;
+    top: 4px;
     width: 4rem;
     height: 1.6rem;
     background-color: rgb(46, 170, 220);
@@ -117,7 +136,7 @@ img{
 #group, #group2{
     position:relative;
     left: 10%;
-    top: 5%;
+    top: 2%;
     width: 15rem;
     height: 2.3rem;
     color: black;
@@ -134,11 +153,13 @@ img{
 }
 
 span{
-    margin-left: 1rem;
+    padding-top: 0.2rem;
+    margin-left: 0.5rem;
 }
 
 p{
-    margin-top: -0.6rem
+    margin-top: -0.6rem;
+    color: #373630;
 }
 
 hr{
@@ -217,7 +238,7 @@ ul{
     display: flex;   
     border: #DADADA 1px solid;
     flex-direction: column;
-    width: 13rem;
+    width: 8rem;
     box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
     border-radius: 3px;
     display: block;
@@ -225,16 +246,19 @@ ul{
     top: -34px;
     left: 13px;
     display: block;
+    background-color: #FFFF;
    }
 
    h3{
-       padding-left: 1rem;
+       padding-left: 0rem;
        font-weight: 200;
        font-size: 0.8rem;
        margin-top: 0.2rem;
        margin-bottom: 0.4rem;
        font-family: Verdana, Geneva, Tahoma, sans-serif;
        color: #373630;
+       position: relative;
+       left:0%;
    }
 
    .tab:hover{
