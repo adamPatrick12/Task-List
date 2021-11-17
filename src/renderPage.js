@@ -3,7 +3,7 @@ import {groupInput, ToDoContainer} from "./group1"
 import {groupInput3} from "./group3"
 import {groupInput4} from "./group4"
 import {groupInput5} from "./group5"
-import header from "./../src/images/header-Img.jpg"
+
 
 let groupCount = 0;
 
@@ -20,8 +20,8 @@ const renderPage = function (){
 
     const headImg = document.createElement("div")
     headImg.classList.add("header-img")
-    const img = new Image()
-    img.src = header
+    const img = document.createElement("img")
+    img.src = "images/header-Img.jpg"
     headImg.appendChild(img)
 
     const instructions = document.createElement("div")
