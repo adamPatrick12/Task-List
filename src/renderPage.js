@@ -18,6 +18,15 @@ const renderPage = function (){
     subTitle.textContent = "✔️ Task List"
     topBar.appendChild(subTitle)
 
+    const notion = document.createElement("img")
+    notion.src = "images/notion.png"
+    notion.classList.add("Iconimg2")
+    const subTitle2 = document.createElement("span")
+    subTitle2.textContent = "Inspired by"
+    subTitle2.classList.add("subTitle")
+    subTitle2.appendChild(notion)
+    topBar.appendChild(subTitle2)
+
     const headImg = document.createElement("div")
     headImg.classList.add("header-img")
     const img = document.createElement("img")

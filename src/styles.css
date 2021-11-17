@@ -8,6 +8,7 @@ body{
     height: 3rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header-img{
@@ -26,6 +27,20 @@ img{
     width: 1rem;
     padding-right: 0.5rem;
     padding-top: 0.3rem;
+}
+
+.subTitle{
+    font-family: cursive;
+    padding-bottom: 0.6rem;
+}
+
+.Iconimg2{
+    height: 1.5rem;
+    width: 1.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.3rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
 }
 
 .instruct{

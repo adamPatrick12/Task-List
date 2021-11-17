@@ -197,7 +197,7 @@ const deleteTab = () => {
     MenuTitle1.textContent = "Delete"
     const imgTrash = document.createElement("img")
     imgTrash.classList.add("Iconimg")
-    imgTrash.src = "../src/images/garbage.png"
+    imgTrash.src = "images/garbage.png"
     deleteTab.appendChild(MenuTitle1)
     MenuTitle1.prepend(imgTrash)
     
@@ -214,7 +214,7 @@ const renameTab = () => {
     MenuTitle2.textContent = "Rename"
     const imgRename = document.createElement("img")
     imgRename.classList.add("Iconimg")
-    imgRename.src = "../src/images/edit.png"
+    imgRename.src = "images/edit.png"
     renameTab.appendChild(MenuTitle2)
     MenuTitle2.prepend(imgRename)
     return renameTab
@@ -227,7 +227,7 @@ const saveTab = () => {
     MenuTitle3.textContent = "Save"
     const imgSave = document.createElement("img")
     imgSave.classList.add("Iconimg")
-    imgSave.src = "../src/images/save.png"
+    imgSave.src = "images/save.png"
     saveTab.appendChild(MenuTitle3)
     MenuTitle3.prepend(imgSave)
     return saveTab
