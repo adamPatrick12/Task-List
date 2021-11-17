@@ -3,7 +3,7 @@ import {groupInput, ToDoContainer} from "./group1"
 import {groupInput3} from "./group3"
 import {groupInput4} from "./group4"
 import {groupInput5} from "./group5"
-import header from "./images/header-Img.jpg"
+import header from "./../src/images/header-Img.jpg"
 
 let groupCount = 0;
 
