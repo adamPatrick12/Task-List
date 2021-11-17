@@ -1,3 +1,6 @@
+import trash from "../dist/images/garbage.png"
+
+
 let groupNameVar = ""
 
 function Task (task, group){
@@ -195,9 +198,9 @@ const deleteTab = () => {
     deleteTab.classList.add("tab")
     const MenuTitle1 = document.createElement("h3")
     MenuTitle1.textContent = "Delete"
-    const imgTrash = document.createElement("img")
+    const imgTrash = new Image()
     imgTrash.classList.add("Iconimg")
-    imgTrash.src = "images/garbage.png"
+    imgTrash.src = trash
     deleteTab.appendChild(MenuTitle1)
     MenuTitle1.prepend(imgTrash)
     
