@@ -250,6 +250,7 @@ ul{
     border-radius: 3px;
     display: none;
     box-shadow: rgb(15 15 15 / 10%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
+    pointer-events: none;
    }
 
    .menuBtn:hover{
