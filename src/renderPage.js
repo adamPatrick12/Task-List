@@ -42,11 +42,11 @@ const renderPage = function () {
   instructions.appendChild(info1);
 
   const info2 = document.createElement('p');
-  info2.textContent = 'Click + New to create a new task directly on this board.';
+  info2.textContent = 'Click the + to create a new group.';
   instructions.appendChild(info2);
 
   const info3 = document.createElement('p');
-  info3.textContent = 'Click new project to add new colume';
+  info3.textContent = 'Click + New to add task to group';
   instructions.appendChild(info3);
 
   const lineBreak = document.createElement('hr');
@@ -57,19 +57,19 @@ const renderPage = function () {
     newGroup.textContent = '+';
 
     newGroup.addEventListener('click', (e) => {
-      if (e.target.textContent === '+' && groupCount == 0) {
+      if (e.target.textContent === '+' && groupCount === 0) {
         groupCount++;
         ToDoContainer.appendChild(groupInput());
-      } else if (e.target.textContent === '+' && groupCount == 1) {
+      } else if (e.target.textContent === '+' && groupCount === 1) {
         groupCount++;
         ToDoContainer.appendChild(groupInput2());
-      } else if (e.target.textContent === '+' && groupCount == 2) {
+      } else if (e.target.textContent === '+' && groupCount === 2) {
         groupCount++;
         ToDoContainer.appendChild(groupInput3());
-      } else if (e.target.textContent === '+' && groupCount == 3) {
+      } else if (e.target.textContent === '+' && groupCount === 3) {
         groupCount++;
         ToDoContainer.appendChild(groupInput4());
-      } else if (e.target.textContent === '+' && groupCount == 4) {
+      } else if (e.target.textContent === '+' && groupCount === 4) {
         groupCount++;
         ToDoContainer.appendChild(groupInput5());
       }
